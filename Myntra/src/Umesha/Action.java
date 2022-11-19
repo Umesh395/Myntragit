@@ -25,6 +25,8 @@ public class Action {
 	String s=happen.getText();
 		System.out.println(s);
 		
+		Thread.sleep(2000);
+		
 		
 		
 
