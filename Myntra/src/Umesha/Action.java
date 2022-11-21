@@ -23,9 +23,6 @@ public class Action {
 	
 		driver.navigate().to("https://www.imdb.com/title/tt9389998/");
 		
-
-	
-
 		WebElement date = driver.findElement(By.xpath("(//a[@href='/title/tt9389998/releaseinfo?ref_=tt_dt_rdat'])[2]"));
 		String text=date.getText();
 	
@@ -35,6 +32,7 @@ public class Action {
 		String text1=country.getText();
         
         driver.navigate().to("https://en.wikipedia.org/wiki/Pushpa:_The_Rise");
+        
         Thread.sleep(3000);
         WebElement date1 = driver.findElement(By.xpath("(//div[@class='plainlist'])[4]"));
         Thread.sleep(3000);
@@ -43,9 +41,6 @@ public class Action {
         WebElement country1 = driver.findElement(By.xpath("//td[text()='India']"));
         String text3=country1.getText();
       
-        SoftAssert soft = new SoftAssert();
-        soft.assertEquals();
-        
 	    if(text.equals(text2)){
 			System.out.println("Pass");
 		
