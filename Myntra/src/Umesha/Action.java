@@ -1,5 +1,10 @@
 package Umesha;
 
+
+
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,31 +19,64 @@ public class Action {
     
 	WebDriver driver = new ChromeDriver();
 	
-	driver.get("https://www.twitter.com/");
+	//driver.get("https://www.twitter.com/");
 	
 //	WebElement signUp = driver.findElement(By.xpath("//a[@href='/login']"));
 	//String text = signUp.getText();
 	//System.out.prin
 	
-	Thread.sleep(2000);
-	WebElement happen = driver.findElement(By.xpath("//span[text()='Happening now']"));
-	String s=happen.getText();
-		System.out.println(s);
+//	Thread.sleep(2000);
+//	WebElement happen = driver.findElement(By.xpath("//span[text()='Happening now']"));
+//	String s=happen.getText();
+//		System.out.println(s);
+//		
+//		Thread.sleep(2000);
+//		
+		driver.navigate().to("https://www.imdb.com/title/tt9389998/");
 		
-		Thread.sleep(2000);
-		
-		
-		
+	//	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECOND);
+	
 
+		WebElement date = driver.findElement(By.xpath("(//a[@href='/title/tt9389998/releaseinfo?ref_=tt_dt_rdat'])[2]"));
+		String text=date.getText();
+		//System.out.println(text);
+		Thread.sleep(2000);
+		//driver.navigate().to("https://en.wikipedia.org/wiki/Pushpa:_The_Rise");
+		//WebElement date1 = driver.findElement(By.xpath("(//div[@class='plainlist'])[4]"));
+		//String text1=date.getText();
+		//System.out.println(text1);		
+		WebElement country = driver.findElement(By.xpath("//a[@href='/search/title/?country_of_origin=IN&ref_=tt_dt_cn']"));
+		String text1=country.getText();
+       // System.out.println(text1);
+        
+        driver.navigate().to("https://en.wikipedia.org/wiki/Pushpa:_The_Rise");
+        Thread.sleep(3000);
+        WebElement date1 = driver.findElement(By.xpath("(//div[@class='plainlist'])[4]"));
+        Thread.sleep(3000);
+		String text2=date1.getText();
+		//System.out.println(text2);
+
+        WebElement country1 = driver.findElement(By.xpath("//td[text()='India']"));
+        String text3=country1.getText();
+      //  System.out.println(text3);
+        
+	    if(text.equals(text2)){
+			System.out.println("Pass");
 		
+		}
+		else
+		{
+		   System.out.println("Fail");
+		}
 		
+	    if(text1.equals(text3)){
+			System.out.println("Pass");
 		
-		
-		
-		
-		
-		
-		
+		}
+		else
+		{
+		   System.out.println("Fail");
+		}
 		
 	}
 	
